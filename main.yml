@@ -6,6 +6,12 @@
     roles:
       - {name: common, tags: common}
 
+  - name: Install Postgres
+    become: yes
+    hosts: db
+    roles:
+      - {name: db, tags: db}
+
   - name: Install Tomcat on both App Servers
     become: yes
     hosts: apps
@@ -18,8 +24,3 @@
     roles:
       - {name: haproxy, tags: haproxy} 
 
-  - name: Install Postgres
-    become: yes
-    hosts: db
-    roles:
-      - {name: db, tags: db}
