@@ -1,0 +1,25 @@
+---
+
+  - name: Repo refresh for servers
+    become: yes
+    hosts: all
+    roles:
+      - {name: common, tags: common}
+
+  - name: Install Tomcat on both App Servers
+    become: yes
+    hosts: apps
+    roles:
+      - {name: app, tags: app}
+
+  - name: Deploy HA Proxy
+    become: yes
+    hosts: ha
+    roles:
+      - {name: haproxy, tags: haproxy} 
+
+  - name: Install Postgres
+    become: yes
+    hosts: db
+    roles:
+      - {name: db, tags: db}
