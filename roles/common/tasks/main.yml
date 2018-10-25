@@ -1,41 +1,41 @@
 ---
 # tasks file for common
-- name: Red Hat Enterprise Linux 7 Repo refresh
+- name: Red-Hat-Enterprise-Linux-7-Repo
   yum_repository:
-    name: Red Hat Enterprise Linux 7 Repo
-    description: Red Hat Enterprise Linux 7 Repo
+    name: Red-Hat-Enterprise-Linux-7-Repo
+    description: Red-Hat-Enterprise-Linux-7-Repo
     baseurl: http://admin.na.shared.opentlc.com/repos/ocp/3.6/rhel-7-server-rpms
     enabled: 1
     gpgcheck: 0
  
-- name: Red Hat Enterprise Linux 7 Common refresh
+- name: Red-Hat-Enterprise-Linux-7-Common
   yum_repository:
-    name: Red Hat Enterprise Linux 7 Common
-    description: Red Hat Enterprise Linux 7 Common Repo
+    name: Red-Hat-Enterprise-Linux-7-Common
+    description: Red-Hat-Enterprise-Linux-7-Common-Repo
     baseurl: http://admin.na.shared.opentlc.com/repos/ocp/3.6/rhel-7-server-rh-common-rpms
     enabled: 1
     gpgcheck: 0
 
-- name: Red Hat Enterprise Linux 7 Extras refresh
+- name: Red-Hat-Enterprise-Linux-7-Extras
   yum_repository:
-    name: Red Hat Enterprise Linux 7 Extras 
-    description: Red Hat Enterprise Linux 7 Repo
+    name: Red-Hat-Enterprise-Linux-7-Extras 
+    description: Red-Hat-Enterprise-Linux-7-Extras
     baseurl: http://admin.na.shared.opentlc.com/repos/ocp/3.6//rhel-7-server-extras-rpms
     enabled: 1
     gpgcheck: 0
 
-- name: Red Hat Enterprise Linux 7 Optional Repo refresh
+- name: Red-Hat-Enterprise-Linux-7-Optional-Repo
   yum_repository:
-    name: Red Hat Enterprise Linux 7 Optional Repo
-    description: Red Hat Enterprise Linux 7 Optional Repo
+    name: Red-Hat-Enterprise-Linux-7-Optional-Repo
+    description: Red-Hat-Enterprise-Linux-7-Optional-Repo
     baseurl: http://admin.na.shared.opentlc.com/repos/ocp/3.6//rhel-7-server-optional-rpms
     enabled: 1
     gpgcheck: 0
 
-- name: Extra Packages for Enterprise Linux 7 - $basearch Repo refresh
+- name: Extra-Packages-for-Enterprise-Linux-7---$basearch-Repo
   yum_repository:
-    name: Extra Packages for Enterprise Linux 7 - $basearch Repo
-    description: Extra Packages for Enterprise Linux 7 - $basearch Repo
+    name: Extra-Packages-for-Enterprise-Linux-7---$basearch-Repo
+    description: Extra-Packages-for-Enterprise-Linux-7---$basearch-Repo
     baseurl: http://download.fedoraproject.org/pub/epel/7/$basearch
     mirrorlist: http://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
     failovermethod: priority

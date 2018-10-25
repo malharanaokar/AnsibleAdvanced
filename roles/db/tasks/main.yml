@@ -1,9 +1,15 @@
 ---
 # tasks file for db
-- name: install postgres
+- name: check if installed postgres
+  stat:
+    path: /var/lib/pgsql/data
+  register: installed
+
+- name: install postgres 
   yum:
     name: postgresql-server
     state: latest
+  when: installed.stat.exists == false
 
 - name: enable postgres at boot
   service:
@@ -12,7 +18,7 @@
 
 - name: Check if DB has been initialised
   stat:
-    path: /var/lib/pgsql/data/pg_version.txt
+    path: /var/lib/pgsql/data
   register: dbinstalled
 #  - debug: var=dbinstalled.stat.exists
 - name: initilize postgres
